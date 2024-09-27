@@ -1,0 +1,57 @@
+.header {
+  border: 2px solid red;
+  background-color: #e5f7e5;
+  padding: 10px;
+  text-align: right;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.yellow {
+  font-size: 18px;
+  border: 4px solid orange;
+  padding: 5px;
+}
+
+.body {
+  border: 2px solid blue;
+  background-color: #e8fbfb;
+  padding: 5px;
+  margin-top: 10px;
+  overflow: hidden;
+}
+
+.bodyhead {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid lightgray;
+  margin-bottom: 10px;
+  padding-bottom: 5px;
+}
+
+.date {
+  font-size: 16px;
+  border: 2px solid purple;
+  margin-right: 10px;
+}
+
+.entry-title {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.entry-image {
+  max-width: 100px;
+  height: auto;
+  float: right;
+  margin-left: 10px;
+}
+
+.description {
+  font-size: 14px;
+  margin-top: 10px;
+  clear: both;
+}
