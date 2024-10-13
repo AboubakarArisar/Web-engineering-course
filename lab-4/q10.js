@@ -1,9 +1,23 @@
-function dateDifference(date1, date2) {
-  const oneDay = 24 * 60 * 60 * 1000;
-  const firstDate = new Date(date1);
-  const secondDate = new Date(date2);
-  const diffDays = Math.round(Math.abs((firstDate - secondDate) / oneDay));
-  return diffDays;
-}
-
-console.log(dateDifference("2004-02-14", "2024-10-4"));
+function containsDigit(str) {
+    for (let i = 0; i < str.length; i++) {
+      if (str[i] >= "0" && str[i] <= "9") {
+        return true;
+      }
+    }
+    return false;
+  }
+  
+  function filterElementsWithDigits(elements) {
+    const result = [];
+    for (let i = 0; i < elements.length; i++) {
+      if (containsDigit(elements[i])) {
+        result.push(elements[i]);
+      }
+    }
+    return result;
+  }
+  
+  const elements = ["abc", "a1b", "123", "xyz"];
+  const result = filterElementsWithDigits(elements);
+  console.log(result);
+  

@@ -9,11 +9,11 @@ function greet() {
   return "Hello!";
 }
 
-function callFunction(func) {
-  return func();
+function callFunction() {
+  return greet();
 }
 
-console.log(callFunction(greet)); // Output: Hello!
+console.log(callFunction()); // Output: Hello!
 
 //Example 2: Using higher-order functions with map()
 
