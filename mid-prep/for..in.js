@@ -5,5 +5,5 @@
 console.log("\n1. For...in Loop");
 const Class = { name: "Section-E", strength: 45, semester: "5th" };
 for (const key in Class) {
-  console.log(`${key}: ${person[key]}`);
+  console.log(`${key}: ${Class[key]}`);
 }
