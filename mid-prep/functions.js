@@ -23,11 +23,3 @@ console.log(multiply(4, 6));
 (function () {
   console.log("I am a Self-Invoking Function");
 })();
-
-let a = function () {
-  return 3;
-};
-
-let ab = [1, 2, 3, 4, 5, 6, 7, 8, 9];
-
-console.log(ab);
