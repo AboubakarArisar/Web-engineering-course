@@ -27,3 +27,13 @@ let studentsObj = students.reduce((acc, student) => {
 }, {});
 
 console.log(studentsObj);
+
+//map question
+
+let nums = [1, 2, 3, 4, 5];
+let numbers = nums.map((num) => {
+  if (num % 2 == 0) return num * 2;
+  else return;
+});
+
+console.log(numbers);
