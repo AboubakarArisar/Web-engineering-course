@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Negative Margin and Padding Example</title>
+    <style>
+      .container {
+        background-color: lightblue;
+        padding: 20px;
+        margin: 20px;
+      }
+
+      .negative-padding {
+        background-color: yellow;
+        padding: -10px; /* Invalid and ignored */
+        margin-top: -20px;
+      }
+
+      .negative-margin {
+        background-color: lightgreen;
+        padding: 10px; /* Works normally */
+        margin: -30px; /* Moves the element up and to the left */
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <p class="negative-padding">
+        This paragraph has negative padding (ignored) and negative margin.
+      </p>
+    </div>
+
+    <div class="container" style="background-color: lightcoral">
+      <p class="negative-margin">
+        This paragraph has positive padding and negative margin.
+      </p>
+    </div>
+  </body>
+</html>
