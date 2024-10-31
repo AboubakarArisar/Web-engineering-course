@@ -3,8 +3,14 @@
   "public": true,
   "builds": [
     {
-      "src": "index.html",
+      "src": "mid-lab-practice/index.html",
       "use": "@vercel/static"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "mid-lab-practice/$1"
     }
   ]
 }
