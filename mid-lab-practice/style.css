@@ -1,0 +1,288 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+main {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+header {
+  background-color: white;
+  color: black;
+  padding: 20px;
+  height: 20vh;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.items {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: 10px;
+}
+.items select {
+  outline: none;
+  border: none;
+  padding: 2px;
+  background-color: transparent;
+  appearance: none;
+  cursor: pointer;
+  font-size: 16px;
+  color: #333;
+}
+
+.items select {
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path fill="%23333" d="M7 10l5 5 5-5z"/></svg>');
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+}
+
+.items ul {
+  list-style: none;
+  display: flex;
+  gap: 10px;
+}
+
+.cart {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+}
+
+.hero {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  height: 75vh;
+  padding: 0 10px;
+  background-color: rgb(189, 201, 209);
+}
+
+.left {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+.left h1 {
+  font-size: 40px;
+  width: 50%;
+}
+.left .btn {
+  width: 50%;
+  padding: 5px 0;
+}
+.button {
+  background-color: rgb(50, 45, 80);
+  padding: 10px;
+  color: white;
+  align-self: flex-start;
+}
+
+.right {
+  width: 50%;
+  height: 100%;
+}
+.right img {
+  width: 60%;
+  height: 100%;
+  background-position: cover;
+}
+
+.products {
+  min-height: 50vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+}
+.products .product {
+  display: flex;
+}
+
+.card {
+  width: 300px;
+  min-height: 400px;
+  margin: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+}
+.card .price {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 10px;
+}
+.card .price .sprice {
+  display: flex;
+  gap: 5px;
+}
+.price .sprice .cut {
+  text-decoration: line-through;
+  opacity: 0.5;
+}
+.card {
+  position: relative;
+}
+.card img {
+  height: 100%;
+  width: 100%;
+  background-position: cover;
+}
+
+.sale {
+  position: absolute;
+  top: 10px;
+  left: 0;
+  min-height: 20px;
+  width: 70px;
+  text-align: center;
+  padding: 10px;
+  color: white;
+  background-color: rgb(60, 44, 73);
+}
+
+.shipping {
+  width: 100%;
+  height: 10vh;
+  background-color: rgb(50, 45, 80);
+  color: white;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.shipping h1 {
+  font-size: 24px;
+}
+
+.about {
+  width: 100%;
+  min-height: 50vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+  padding: 10px 20px;
+}
+
+.about .owner {
+  min-width: 220px;
+  display: flex;
+  gap: 20px;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.about .owner img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+}
+
+.about .info {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+footer {
+  width: 100%;
+  min-height: 60vh;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  background-color: rgb(50, 45, 80);
+}
+
+footer .upper {
+  width: 70%;
+  min-height: 100px;
+  color: white;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 20px;
+}
+.upper .about {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: center;
+  align-items: flex-start;
+  width: 50%;
+}
+.upper .email {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+  width: 50%;
+}
+.upper .email .submit {
+  padding: 10px 5px;
+  background-color: rgb(60, 44, 73);
+  width: 100px;
+  color: white;
+  text-transform: uppercase;
+  cursor: pointer;
+  border: 2px solid rgb(79, 79, 109);
+}
+input {
+  padding: 10px;
+  width: 100%;
+}
+
+footer .lower {
+  width: 70%;
+  min-height: 200px;
+  color: white;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.lower-item {
+  width: 20%;
+  min-height: 20vh;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.lower-item h1 {
+  font-size: 24px;
+}
+
+.lower-item ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.lower-item a {
+  text-decoration: underline;
+  color: white;
+}
