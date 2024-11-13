@@ -1,4 +1,4 @@
-let users = [
+const users = [
   {
     username: "larry",
     email: "larry@foo.com",
@@ -60,5 +60,4 @@ let users = [
     },
   },
 ];
-
 export default users;

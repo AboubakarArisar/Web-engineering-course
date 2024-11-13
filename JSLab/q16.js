@@ -1,62 +1,50 @@
-let users = [
-  {
-    username: "larry",
-    email: "larry@foo.com",
-    yearsExperience: 22.1,
-    favoriteLanguages: ["Perl", "Java", "C++"],
-    favoriteEditor: "Vim",
-    hobbies: ["Fishing", "Sailing", "Hiking"],
-    hometown: {
-      city: "San Francisco",
-      state: "CA",
-    },
-  },
-  {
-    username: "jane",
-    email: "jane@test.com",
-    yearsExperience: 33.9,
-    favoriteLanguages: ["Haskell", "Clojure", "PHP"],
-    favoriteEditor: "Emacs",
-    hobbies: ["Swimming", "Biking", "Hiking"],
-    hometown: {
-      city: "New York",
-      state: "NY",
-    },
-  },
-  {
-    username: "sam",
-    email: "sam@test.com",
-    yearsExperience: 8.2,
-    favoriteLanguages: ["JavaScript", "Ruby", "Python", "Go"],
-    favoriteEditor: "Atom",
-    hobbies: ["Golf", "Cooking", "Archery"],
-    hometown: {
-      city: "Fargo",
-      state: "SD",
-    },
-  },
-  {
-    username: "anne",
-    email: "anne@test.com",
-    yearsExperience: 4,
-    favoriteLanguages: ["C#", "C++", "F#"],
-    favoriteEditor: "Visual Studio Code",
-    hobbies: ["Tennis", "Biking", "Archery"],
-    hometown: {
-      city: "Albany",
-      state: "NY",
-    },
-  },
-  {
-    username: "david",
-    email: "david@test.com",
-    yearsExperience: 12.5,
-    favoriteLanguages: ["JavaScript", "C#", "Swift"],
-    favoriteEditor: "VS Code",
-    hobbies: ["Volunteering", "Biking", "Coding"],
-    hometown: {
-      city: "Los Angeles",
-      state: "CA",
-    },
-  },
-];
+import users from "./object.js";
+
+//a)
+function printEmails(users) {
+  console.log("users email");
+  users.forEach((user) => {
+    console.log(user.email);
+  });
+}
+printEmails(users);
+//b)
+function printHobbies(users) {
+  console.log("users hobbies");
+
+  users.forEach((user) => {
+    console.log(user.hobbies);
+  });
+}
+printHobbies(users);
+
+//c)
+
+function findHometownByState(users, state) {
+  return users.find((user) => user.hometown.state === state);
+}
+
+console.log(findHometownByState(users, "NY"));
+
+//d)
+function allLanguages(users) {
+  const languages = users.map((user) => user.favoriteLanguages);
+  return languages;
+}
+
+console.log(allLanguages(users));
+
+//e)
+
+function hasFavoriteEditor(users, editor) {
+  return users.some((user) => user.favoriteEditor === editor);
+}
+console.log(hasFavoriteEditor(users, "VS Code"));
+
+//f)
+
+function findByUsername(users, username) {
+  return users.find((user) => user.username === username);
+}
+
+console.log(findByUsername(users, "sam"));
