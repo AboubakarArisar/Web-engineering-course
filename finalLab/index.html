@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Final-Lab</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        width: 100%;
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #387536;
+      }
+
+      .container {
+        width: 400px;
+        min-height: 100vh;
+        border-radius: 5px;
+        background-color: white;
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        padding: 10px;
+      }
+
+      .nisab,
+      .cash,
+      .goldsilver,
+      .liabilities {
+        margin-top: 10px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .cash > div,
+      .goldsilver > div,
+      .liabilities > div {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+      }
+
+      input[type="number"] {
+        padding: 10px;
+        background-color: transparent;
+        border: 1px solid #b2ebf2;
+        outline: none;
+      }
+
+      .liabilities > div > input {
+        padding: 10px;
+        background-color: transparent;
+        border: 1px solid #b2ebf2;
+        outline: none;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Make a zakat calculator -->
+    <div class="container">
+      <h2>Nisab threshold</h2>
+      <hr />
+      <div class="nisab">
+        <div>
+          <input type="radio" name="nisab" id="gold" />
+          <label for="gold">Value of Gold (approximately Rs. 1,473,000)</label>
+        </div>
+        <div>
+          <input type="radio" name="nisab" id="silver" />
+          <label for="silver"
+            >Value of Silver (approximately Rs. 114,713)</label
+          >
+        </div>
+      </div>
+      <h2>Cash</h2>
+      <hr />
+      <div class="cash">
+        <div>
+          <label for="hand">Cash in hand & in bank accounts</label>
+          <input type="number" name="cash" id="hand" placeholder="RS." />
+        </div>
+        <div>
+          <label for="haj">Cash deposited for future like eg.Hajj</label>
+          <input type="number" name="cash" id="haj" placeholder="RS." />
+        </div>
+        <div>
+          <label for="loan">Cash Given out in loans</label>
+          <input type="number" name="cash" id="loan" placeholder="RS." />
+        </div>
+        <div>
+          <label for="Investments">Investments, shares , saving, etc</label>
+          <input type="number" name="cash" id="Investments" placeholder="RS." />
+        </div>
+      </div>
+
+      <h2>Gold & Silver</h2>
+      <hr />
+      <div class="goldsilver">
+        <div>
+          <label for="havinggold">value of Gold you possses</label>
+          <input
+            type="number"
+            name="goldsilver"
+            id="havinggold"
+            placeholder="RS."
+          />
+        </div>
+        <div>
+          <label for="havingsilver"
+            >Cash deposited for future like eg.Hajj</label
+          >
+          <input
+            type="number"
+            name="goldsilver"
+            id="havingsilver"
+            placeholder="RS."
+          />
+        </div>
+      </div>
+
+      <h2>Liabilities</h2>
+      <hr />
+      <div class="liabilities">
+        <div>
+          <label for="borrow">Borrowed Money, goods</label>
+          <input
+            type="number"
+            name="liabilities"
+            id="borrow"
+            placeholder="RS."
+          />
+        </div>
+        <div>
+          <label for="wages">wages due to employees</label>
+          <input
+            type="number"
+            name="liabilities"
+            id="wages"
+            placeholder="RS."
+          />
+        </div>
+        <div>
+          <label for="taxes">Taxes , rent, utilities</label>
+          <input
+            type="number"
+            name="liabilities"
+            id="taxes"
+            placeholder="RS."
+          />
+        </div>
+      </div>
+
+      <h2>Total Networth</h2>
+      <h2 id="totalNetworth" style="color: #00796b">RS 0</h2>
+      <h2>Zakat payable</h2>
+      <h2 id="totalZakat" style="color: #00796b">RS 0</h2>
+      <div style="display: flex; justify-content: center; align-items: center">
+        <button
+          id="calculateZakat"
+          style="
+            background-color: #00796b;
+            padding: 10px;
+            width: 50%;
+            color: white;
+            border: none;
+          "
+        >
+          Give your Zakat
+        </button>
+      </div>
+    </div>
+    <script>
+      let nisabRadios = document.querySelectorAll("input[name='nisab']");
+      let nisabValue = 0;
+
+      nisabRadios.forEach((radio) => {
+        radio.addEventListener("change", () => {
+          nisabValue = radio.id === "gold" ? 1473000 : 114713;
+        });
+      });
+
+      let cashTotal = 0;
+      let cashInputs = document.querySelectorAll("input[name='cash']");
+      cashInputs.forEach((input) => {
+        input.addEventListener("change", () => {
+          cashTotal = 0;
+          cashInputs.forEach((input) => {
+            cashTotal += Number(input.value);
+          });
+        });
+      });
+
+      let goldSilverTotal = 0;
+      let goldSilverInputs = document.querySelectorAll(
+        "input[name='goldsilver']"
+      );
+      goldSilverInputs.forEach((input) => {
+        input.addEventListener("change", () => {
+          goldSilverTotal = 0;
+          goldSilverInputs.forEach((input) => {
+            goldSilverTotal += Number(input.value);
+          });
+        });
+      });
+
+      let liabilitiesTotal = 0;
+      let liabilitiesInputs = document.querySelectorAll(
+        "input[name='liabilities']"
+      );
+      liabilitiesInputs.forEach((input) => {
+        input.addEventListener("change", () => {
+          liabilitiesTotal = 0;
+          liabilitiesInputs.forEach((input) => {
+            liabilitiesTotal += Number(input.value);
+          });
+        });
+      });
+
+      let calculateZakatButton = document.getElementById("calculateZakat");
+      let totalNetworthElement = document.getElementById("totalNetworth");
+      let totalZakatElement = document.getElementById("totalZakat");
+
+      calculateZakatButton.addEventListener("click", () => {
+        let assets = cashTotal + goldSilverTotal;
+        let netWorth = assets - liabilitiesTotal;
+        if (netWorth > nisabValue) {
+          let zakat = netWorth * 0.025;
+          totalNetworthElement.innerText = `RS ${netWorth}`;
+          totalZakatElement.innerText = `RS ${zakat}`;
+        } else {
+          totalNetworthElement.innerText = `RS ${netWorth}`;
+          totalZakatElement.innerText = `no zakat`;
+        }
+      });
+    </script>
+  </body>
+</html>
