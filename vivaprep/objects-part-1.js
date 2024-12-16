@@ -1,4 +1,6 @@
 //objects are containers for properties and methods aas values are in key and value pair
+
+//objects literal
 const userObj = {
   name: "Aboubakar",
   age: 20,
@@ -32,3 +34,9 @@ console.log(userObj);
 userObj.name = "Aboubakar Arisar";
 
 console.log(userObj);
+
+//adding functions to an object
+
+userObj.greeting = function () {
+  console.log(`Hello ${this.name}`);
+};
