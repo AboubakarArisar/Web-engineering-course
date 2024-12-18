@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM Manipulation</title>
+</head>
+<style>
+    body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    div {
+        width: 100px;
+        height: 100px;
+        display: inline-block;
+        margin: 10px;
+        cursor: pointer;
+        border-radius: 2px;
+    }
+    
+    .brown {
+        background-color: brown;
+    }
+    
+    .green {
+        background-color: green;
+    }
+    
+    .yellow {
+        background-color: yellow;
+    }
+    
+    .blue {
+        background-color: blue;
+    }
+</style>
+
+<body>
+    <h1 id="heading">Change Me!</h1>
+    <p>Selected Color is <span id="select">None</span></p>
+
+    <section>
+        <div class="brown"></div>
+        <div class="green"></div>
+        <div class="yellow"></div>
+        <div class="blue"></div>
+    </section>
+    <script>
+        let span = document.getElementById("select");
+
+        let divs = document.querySelectorAll("div");
+
+        divs.forEach((element) => {
+            element.addEventListener("click", function(event) {
+                span.textContent = event.target.className;
+            });
+        });
+    </script>
+</body>
+
+</html>
