@@ -145,6 +145,125 @@
 //     console.log(`${minute} mins : ${second} seconds`);
 // }, 1000);
 
-setTimeout(() => {
-    console.log("jai hind dosto");
-}, 1000);
+// setTimeout(() => {
+//     console.log("jai hind dosto");
+// }, 1000);
+
+// const user = {
+//     johnDoe: {
+//         age: 34,
+//         email: "johnDoe@freeCodeCamp.com",
+//     },
+//     name: "Aboubakar",
+//     sem: 5,
+//     course: "BSCS",
+// };
+
+// const { age: userAge, sem: userSem } = user;
+
+// console.log(userAge);
+// console.log(userSem);
+
+// const [a, b, c, d, e, f, g] = [1, 2, 3, 4, 5, 6];
+// console.log(a, b, c, d, e, f, g);
+
+// const [a, b, ...arr] = [1, 2, 3, 4, 5, 7];
+// console.log(a, b);
+// console.log(arr);
+
+//create an iterator
+
+// let array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+// let iterator = array[Symbol.iterator]();
+
+// console.log(iterator.next());
+// console.log(iterator.next());
+// console.log(iterator.next());
+// console.log(iterator.next());
+// console.log(iterator.next());
+// console.log(iterator.next());
+// console.log(iterator.next());
+// console.log(iterator.next());
+// console.log(iterator.next());
+// console.log(iterator.next());
+// console.log(iterator.next());
+
+// for (let i = 0; i < 3; i++) {
+//     setTimeout(() => {
+//         console.log(i);
+//     }, 1000);
+// }
+
+// for (var i = 0; i < 3; i++) {
+//     setTimeout(() => {
+//         console.log(i);
+//     }, 1000);
+// }
+
+// function getData(a, nextfunc) {
+//     setTimeout(() => {
+//         console.log(a);
+//         if (nextfunc) {
+//             nextfunc();
+//         }
+//     }, 2000);
+// }
+
+// getData(1, () => {
+//     getData(2, () => {
+//         getData(3, () => {
+//             getData(4, () => {
+//                 getData(5, () => {
+//                     getData(6, () => {
+//                         getData(7, () => {
+//                             getData(8, () => {
+//                                 getData(9, () => {
+//                                     getData(10);
+//                                 });
+//                             });
+//                         });
+//                     });
+//                 });
+//             });
+//         });
+//     });
+// });
+
+// function getNum() {
+//     function delay(ms) {
+//         return new Promise((resolve) => setTimeout(resolve, ms));
+//     }
+
+//     async function getDataSequentially() {
+//         for (let i = 1; i <= 10; i++) {
+//             await delay(2000);
+//             console.log(i);
+//         }
+//     }
+
+//     getDataSequentially();
+//     return 1;
+// }
+
+// // Fixed the promise to resolve or reject, not both
+// let promise = new Promise((resolve) => {
+//     resolve("Success");
+// });
+
+// // Chained promises to avoid callback hell
+// promise
+//     .then((res) => {
+//         console.log(res);
+//         return getNum();
+//     })
+//     .then((res) => {
+//         console.log(res);
+//         return getNum();
+//     })
+//     .then((res) => {
+//         console.log(res);
+//     })
+//     .catch((err) => {
+//         console.log(err);
+//     });

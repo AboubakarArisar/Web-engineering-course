@@ -37,3 +37,11 @@
 // localStorage.clear();
 
 // document.cookie = "name=John; expires=Thu, 18 Dec 2024 13:20:00 UTC; path=/";
+
+// let instructions = ["Add", "Subtract", "Multiply", "Divide"];
+
+// localStorage.setItem("instructions", instructions);
+
+// let instr = localStorage.getItem("instructions");
+
+// console.log("instrucitons", instr);
